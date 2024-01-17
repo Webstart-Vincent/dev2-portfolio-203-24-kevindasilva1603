@@ -1,0 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Grandstander&family=Prompt:ital,wght@0,900;1,300;1,400&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --color-body-bg: #eee7e1;
+}
