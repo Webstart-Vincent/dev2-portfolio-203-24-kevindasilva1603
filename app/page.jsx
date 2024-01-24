@@ -1,27 +1,68 @@
+// app/page.jsx
+// use client
+
 import Image from "next/image";
 
 export default function Home() {
+    if (typeof window !== "undefined") {
+        // Exécutez le code client ici avec useEffect ou toute autre logique côté client
+        window.addEventListener("DOMContentLoaded", (event) => {
+            var dataText = [
+                "Kévin Da Silva.",
+                "Web Developer.",
+                "Portfolio.",
+                "Thanks!",
+            ];
+
+            function typeWriter(text, i, fnCallback) {
+                if (i < text.length) {
+                    document.querySelector("h2").innerHTML =
+                        text.substring(0, i + 1) +
+                        '<span aria-hidden="true"></span>';
+
+                    setTimeout(function () {
+                        typeWriter(text, i + 1, fnCallback);
+                    }, 100);
+                } else if (typeof fnCallback == "function") {
+                    setTimeout(fnCallback, 700);
+                }
+            }
+
+            function startTextAnimation(i) {
+                if (typeof dataText[i] == "undefined") {
+                    setTimeout(function () {
+                        startTextAnimation(0);
+                    }, 20000);
+                } else {
+                    typeWriter(dataText[i], 0, function () {
+                        startTextAnimation(i + 1);
+                    });
+                }
+            }
+            startTextAnimation(0);
+        });
+    }
     return (
         <>
             <head>
                 <title>Portfolio</title>
             </head>
-            <body className='bg-radial-gradient text-white font-sans'>
+            <body className=' text-body-text bg-radial   '>
                 <div className='flex flex-col lg:flex-row justify-between items-center h-screen px-4 md:px-10 lg:px-20 xl:px-40 mx-auto'>
                     <div className='nav-left hidden lg:flex flex-col items-center justify-start fixed top-0 left-0 h-screen'>
                         <a
                             href='https://www.linkedin.com/in/lauren-waller-46a95317/'
-                            className='nav-left-item my-6 text-lg hover:text-gray-300 font-grandstander'>
+                            className='nav-left-item my-6 text-lg bg-body-bg font-grandstander'>
                             LI
                         </a>
                         <a
                             href='https://twitter.com/waller_texas'
-                            className='nav-left-item my-6 text-lg hover:text-gray-300 font-grandstander'>
+                            className='nav-left-item my-6 text-lg bg-body-bg font-grandstander'>
                             TW
                         </a>
                         <a
                             href='https://dribbble.com/waller_texas'
-                            className='nav-left-item my-6 text-lg hover:text-gray-300 font-grandstander'>
+                            className='nav-left-item my-6 text-lg bg-body-bg font-grandstander body-bg'>
                             DR
                         </a>
                         <div className='w-px h-24 bg-gray-600 my-8'></div>
@@ -31,17 +72,17 @@ export default function Home() {
                     <div className='w-full lg:hidden flex justify-between items-center py-4'>
                         <a
                             href='https://www.linkedin.com/in/lauren-waller-46a95317/'
-                            className='text-lg hover:text-gray-300 font-grandstander'>
+                            className='text-lg bg-body-bg font-grandstander'>
                             LI
                         </a>
                         <a
                             href='https://twitter.com/waller_texas'
-                            className='text-lg hover:text-gray-300 font-grandstander'>
+                            className='text-lg bg-body-bg font-grandstander'>
                             TW
                         </a>
                         <a
                             href='https://dribbble.com/waller_texas'
-                            className='text-lg hover:text-gray-300 font-grandstander'>
+                            className='text-lg bg-body-bg font-grandstander'>
                             DR
                         </a>
                     </div>
@@ -49,7 +90,7 @@ export default function Home() {
                     <div className='hidden lg:hidden text-xs mb-4'>© 2023</div>
 
                     <div className='flex flex-col items-center lg:items-start lg:w-1/2 space-y-2 lg:space-y-3 xl:space-y-4 mt-8 lg:mt-0 text-center lg:text-left'>
-                        <h2 className='text-4xl lg:text-5xl xl:text-6xl font-bold font-prompt'>
+                        <h2 className='text-4xl lg:text-5xl xl:text-6xl font-bold font-prompt '>
                             Kévin Da Silva
                         </h2>
                         <p className='text-base lg:text-lg xl:text-xl font-prompt'>
@@ -63,16 +104,16 @@ export default function Home() {
                     </div>
 
                     <div className='w-full lg:w-1/4 flex flex-col items-center lg:items-start space-y-9 lg:space-y-8 xl:space-y-10 mb-10 lg:mb-0'>
-                        <h1 className='text-3xl lg:text-4xl xl:text-5xl font-bold font-prompt cursor-pointer hover:text-gray-300'>
+                        <h1 className='text-3xl lg:text-4xl xl:text-5xl font-bold font-prompt cursor-pointer bg-body-bg'>
                             Work
                         </h1>
-                        <h1 className='text-3xl lg:text-4xl xl:text-5xl font-bold font-prompt cursor-pointer hover:text-gray-300'>
+                        <h1 className='text-3xl lg:text-4xl xl:text-5xl font-bold font-prompt cursor-pointer bg-body-bg'>
                             About
                         </h1>
-                        <h1 className='text-3xl lg:text-4xl xl:text-5xl font-bold font-prompt cursor-pointer hover:text-gray-300'>
+                        <h1 className='text-3xl lg:text-4xl xl:text-5xl font-bold font-prompt cursor-pointer bg-body-bg'>
                             Shop
                         </h1>
-                        <h1 className='text-3xl lg:text-4xl xl:text-5xl font-bold font-prompt cursor-pointer hover:text-gray-300'>
+                        <h1 className='text-3xl lg:text-4xl xl:text-5xl font-bold font-prompt cursor-pointer bg-body-bg'>
                             Contact
                         </h1>
                     </div>

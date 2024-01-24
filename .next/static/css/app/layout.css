@@ -513,6 +513,7 @@ video {
   background-color: rgb(75 85 99 / var(--tw-bg-opacity));
 }
 .bg-radial-gradient{
+  background-color: radial-gradient(circle at center, #222, #000);
   background-image: radial-gradient(circle at center, #222, #000);
 }
 .px-4{
@@ -562,9 +563,17 @@ video {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+.text-body-text{
+  --tw-text-opacity: 1;
+  color: rgb(238 231 225 / var(--tw-text-opacity));
+}
+.bg-radial{
+  background: radial-gradient(circle at center, #222, #000);
+}
 
 :root {
-    --color-body-bg: #eee7e1;
+    --color-body-bg: radial-gradient(circle at center, #222, #000);
+    ---color-body-backgroudnd: radial-gradient(circle at center, #222, #000);
 }
 
 .hover\:text-gray-300:hover{

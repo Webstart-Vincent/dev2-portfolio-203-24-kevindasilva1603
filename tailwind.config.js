@@ -8,7 +8,9 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                "body-bg": "#eee7e1", // Ajout de la couleur personnalisée
+                "body-text": "#eee7e1", // Ajout de la couleur personnalisée
+                "radial-gradient":
+                    "radial-gradient(circle at center, #222, #000)",
             },
             fontFamily: {
                 grandstander: ["Grandstander", "sans-serif"], // Ajout de la police Grandstander
@@ -17,9 +19,17 @@ module.exports = {
             backgroundImage: {
                 "radial-gradient":
                     "radial-gradient(circle at center, #222, #000)",
-                
             },
         },
     },
-    plugins: [],
+    plugins: [
+        function ({ addUtilities }) {
+            const newUtilities = {
+                ".bg-radial": {
+                    background: "radial-gradient(circle at center, #222, #000)",
+                },
+            };
+            addUtilities(newUtilities, ["responsive", "hover"]);
+        },
+    ],
 };

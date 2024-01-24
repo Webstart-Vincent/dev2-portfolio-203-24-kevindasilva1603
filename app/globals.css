@@ -4,5 +4,6 @@
 @tailwind utilities;
 
 :root {
-    --color-body-bg: #eee7e1;
+    --color-body-bg: radial-gradient(circle at center, #222, #000);
+    ---color-body-backgroudnd: radial-gradient(circle at center, #222, #000);
 }
