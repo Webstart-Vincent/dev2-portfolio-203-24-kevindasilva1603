@@ -50,17 +50,17 @@ export default function Home() {
                 <div className='flex flex-col lg:flex-row justify-between items-center h-screen px-4 md:px-10 lg:px-20 xl:px-40 mx-auto'>
                     <div className='nav-left hidden lg:flex flex-col items-center justify-start fixed top-0 left-0 h-screen'>
                         <a
-                            href='https://www.linkedin.com/in/lauren-waller-46a95317/'
+                            href='https://www.linkedin.com/in/k%C3%A9vin-da-silva-069755258/'
                             className='nav-left-item my-6 text-lg bg-body-bg font-grandstander text-body-text '>
                             LI
                         </a>
                         <a
-                            href='https://twitter.com/waller_texas'
+                            href='https://www.linkedin.com/in/k%C3%A9vin-da-silva-069755258/'
                             className='nav-left-item my-6 text-lg bg-body-bg font-grandstander text-body-text'>
                             TW
                         </a>
                         <a
-                            href='https://dribbble.com/waller_texas'
+                            href='https://www.linkedin.com/in/k%C3%A9vin-da-silva-069755258/'
                             className='nav-left-item my-6 text-lg bg-body-bg font-grandstander body-bg text-body-text'>
                             DR
                         </a>
@@ -72,17 +72,17 @@ export default function Home() {
 
                     <div className='w-full lg:hidden flex justify-between items-center py-4'>
                         <a
-                            href='https://www.linkedin.com/in/lauren-waller-46a95317/'
+                            href='https://www.linkedin.com/in/k%C3%A9vin-da-silva-069755258/'
                             className='text-lg bg-body-bg font-grandstander text-body-text'>
                             LI
                         </a>
                         <a
-                            href='https://twitter.com/waller_texas'
+                            href='https://www.linkedin.com/in/k%C3%A9vin-da-silva-069755258/'
                             className='text-lg bg-body-bg font-grandstander text-body-text'>
                             TW
                         </a>
                         <a
-                            href='https://dribbble.com/waller_texas'
+                            href='https://www.linkedin.com/in/k%C3%A9vin-da-silva-069755258/'
                             className='text-lg bg-body-bg font-grandstander text-body-text'>
                             DR
                         </a>
