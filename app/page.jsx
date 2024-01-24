@@ -98,10 +98,10 @@ export default function Home() {
                         </h2>
                         <p className='text-base lg:text-lg xl:text-xl font-prompt text-body-text'>
                             Product Designer / Webflow Developer / Framer
-                            Developer and Partner.
+                            Developer and Partner everything dont ask.
                         </p>
                         <p className='text-base lg:text-lg xl:text-xl font-prompt text-body-text'>
-                            Currently working full-time as a Senior Product
+                            Currently working full-time as a BOSS yeahhh
                             Designer at Detail Technologies
                         </p>
                     </div>
