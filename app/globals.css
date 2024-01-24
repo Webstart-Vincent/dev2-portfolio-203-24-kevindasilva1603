@@ -7,3 +7,7 @@
     --color-body-bg: radial-gradient(circle at center, #222, #000);
     ---color-body-backgroudnd: radial-gradient(circle at center, #222, #000);
 }
+
+body {
+    @apply bg-radial;
+}

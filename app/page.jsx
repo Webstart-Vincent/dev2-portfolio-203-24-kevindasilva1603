@@ -1,5 +1,4 @@
 // app/page.jsx
-// use client
 
 import Image from "next/image";
 
@@ -47,73 +46,77 @@ export default function Home() {
             <head>
                 <title>Portfolio</title>
             </head>
-            <body className=' text-body-text bg-radial   '>
+            <body className='bg-[#1b1b1d]  text-body-text'>
                 <div className='flex flex-col lg:flex-row justify-between items-center h-screen px-4 md:px-10 lg:px-20 xl:px-40 mx-auto'>
                     <div className='nav-left hidden lg:flex flex-col items-center justify-start fixed top-0 left-0 h-screen'>
                         <a
                             href='https://www.linkedin.com/in/lauren-waller-46a95317/'
-                            className='nav-left-item my-6 text-lg bg-body-bg font-grandstander'>
+                            className='nav-left-item my-6 text-lg bg-body-bg font-grandstander text-body-text '>
                             LI
                         </a>
                         <a
                             href='https://twitter.com/waller_texas'
-                            className='nav-left-item my-6 text-lg bg-body-bg font-grandstander'>
+                            className='nav-left-item my-6 text-lg bg-body-bg font-grandstander text-body-text'>
                             TW
                         </a>
                         <a
                             href='https://dribbble.com/waller_texas'
-                            className='nav-left-item my-6 text-lg bg-body-bg font-grandstander body-bg'>
+                            className='nav-left-item my-6 text-lg bg-body-bg font-grandstander body-bg text-body-text'>
                             DR
                         </a>
                         <div className='w-px h-24 bg-gray-600 my-8'></div>
-                        <div className='copyright text-xs'>© 2023</div>
+                        <div className='copyright text-xs text-body-text'>
+                            © 2023
+                        </div>
                     </div>
 
                     <div className='w-full lg:hidden flex justify-between items-center py-4'>
                         <a
                             href='https://www.linkedin.com/in/lauren-waller-46a95317/'
-                            className='text-lg bg-body-bg font-grandstander'>
+                            className='text-lg bg-body-bg font-grandstander text-body-text'>
                             LI
                         </a>
                         <a
                             href='https://twitter.com/waller_texas'
-                            className='text-lg bg-body-bg font-grandstander'>
+                            className='text-lg bg-body-bg font-grandstander text-body-text'>
                             TW
                         </a>
                         <a
                             href='https://dribbble.com/waller_texas'
-                            className='text-lg bg-body-bg font-grandstander'>
+                            className='text-lg bg-body-bg font-grandstander text-body-text'>
                             DR
                         </a>
                     </div>
                     <div className='w-full lg:hidden bg-gray-600 h-px my-4'></div>
-                    <div className='hidden lg:hidden text-xs mb-4'>© 2023</div>
+                    <div className='hidden lg:hidden text-xs mb-4 text-body-text'>
+                        © 2023
+                    </div>
 
                     <div className='flex flex-col items-center lg:items-start lg:w-1/2 space-y-2 lg:space-y-3 xl:space-y-4 mt-8 lg:mt-0 text-center lg:text-left'>
-                        <h2 className='text-4xl lg:text-5xl xl:text-6xl font-bold font-prompt '>
+                        <h2 className='text-4xl lg:text-5xl xl:text-6xl font-bold font-prompt text-body-text'>
                             Kévin Da Silva
                         </h2>
-                        <p className='text-base lg:text-lg xl:text-xl font-prompt'>
+                        <p className='text-base lg:text-lg xl:text-xl font-prompt text-body-text'>
                             Product Designer / Webflow Developer / Framer
                             Developer and Partner.
                         </p>
-                        <p className='text-base lg:text-lg xl:text-xl font-prompt'>
+                        <p className='text-base lg:text-lg xl:text-xl font-prompt text-body-text'>
                             Currently working full-time as a Senior Product
                             Designer at Detail Technologies
                         </p>
                     </div>
 
                     <div className='w-full lg:w-1/4 flex flex-col items-center lg:items-start space-y-9 lg:space-y-8 xl:space-y-10 mb-10 lg:mb-0'>
-                        <h1 className='text-3xl lg:text-4xl xl:text-5xl font-bold font-prompt cursor-pointer bg-body-bg'>
+                        <h1 className='text-3xl lg:text-4xl xl:text-5xl font-bold font-prompt cursor-pointer bg-body-bg text-body-text'>
                             Work
                         </h1>
-                        <h1 className='text-3xl lg:text-4xl xl:text-5xl font-bold font-prompt cursor-pointer bg-body-bg'>
+                        <h1 className='text-3xl lg:text-4xl xl:text-5xl font-bold font-prompt cursor-pointer bg-body-bg text-body-text'>
                             About
                         </h1>
-                        <h1 className='text-3xl lg:text-4xl xl:text-5xl font-bold font-prompt cursor-pointer bg-body-bg'>
+                        <h1 className='text-3xl lg:text-4xl xl:text-5xl font-bold font-prompt cursor-pointer bg-body-bg text-body-text'>
                             Shop
                         </h1>
-                        <h1 className='text-3xl lg:text-4xl xl:text-5xl font-bold font-prompt cursor-pointer bg-body-bg'>
+                        <h1 className='text-3xl lg:text-4xl xl:text-5xl font-bold font-prompt cursor-pointer bg-body-bg text-body-text'>
                             Contact
                         </h1>
                     </div>

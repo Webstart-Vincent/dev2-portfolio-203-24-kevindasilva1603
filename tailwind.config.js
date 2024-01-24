@@ -11,14 +11,11 @@ module.exports = {
                 "body-text": "#eee7e1", // Ajout de la couleur personnalisée
                 "radial-gradient":
                     "radial-gradient(circle at center, #222, #000)",
+                "custom-body-bg": "#27272a",
             },
             fontFamily: {
                 grandstander: ["Grandstander", "sans-serif"], // Ajout de la police Grandstander
                 prompt: ["Prompt", "sans-serif"], // Ajout de la police Prompt
-            },
-            backgroundImage: {
-                "radial-gradient":
-                    "radial-gradient(circle at center, #222, #000)",
             },
         },
     },
