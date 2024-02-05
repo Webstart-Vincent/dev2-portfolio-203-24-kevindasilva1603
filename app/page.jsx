@@ -1,46 +1,10 @@
-// app/page.jsx
-
+"use client";
+import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
+import { TypingText } from "typing-text-animation";
 export default function Home() {
-    if (typeof window !== "undefined") {
-        // Exécutez le code client ici avec useEffect ou toute autre logique côté client
-        window.addEventListener("DOMContentLoaded", (event) => {
-            var dataText = [
-                "Kévin Da Silva.",
-                "Web Developer.",
-                "Portfolio.",
-                "Thanks!",
-            ];
-
-            function typeWriter(text, i, fnCallback) {
-                if (i < text.length) {
-                    document.querySelector("h2").innerHTML =
-                        text.substring(0, i + 1) +
-                        '<span aria-hidden="true"></span>';
-
-                    setTimeout(function () {
-                        typeWriter(text, i + 1, fnCallback);
-                    }, 100);
-                } else if (typeof fnCallback == "function") {
-                    setTimeout(fnCallback, 700);
-                }
-            }
-
-            function startTextAnimation(i) {
-                if (typeof dataText[i] == "undefined") {
-                    setTimeout(function () {
-                        startTextAnimation(0);
-                    }, 20000);
-                } else {
-                    typeWriter(dataText[i], 0, function () {
-                        startTextAnimation(i + 1);
-                    });
-                }
-            }
-            startTextAnimation(0);
-        });
-    }
     return (
         <>
             <head>
@@ -94,7 +58,14 @@ export default function Home() {
 
                     <div className='flex flex-col items-center lg:items-start lg:w-1/2 space-y-2 lg:space-y-3 xl:space-y-4 mt-8 lg:mt-0 text-center lg:text-left'>
                         <h2 className='text-4xl lg:text-5xl xl:text-6xl font-bold font-prompt text-body-text'>
-                            Kévin Da Silva
+                            <TypingText
+                                text={[
+                                    "Kévin Da Silva",
+                                    "Web Developer",
+                                    "Portfolio",
+                                    "Thanks",
+                                ]}
+                            />
                         </h2>
                         <p className='text-base lg:text-lg xl:text-xl font-prompt text-body-text'>
                             Product Designer / Webflow Developer / Framer
@@ -106,21 +77,75 @@ export default function Home() {
                         </p>
                     </div>
 
-                    <div className='w-full lg:w-1/4 flex flex-col items-center lg:items-start space-y-9 lg:space-y-8 xl:space-y-10 mb-10 lg:mb-0'>
-                        <h1 className='text-3xl lg:text-4xl xl:text-5xl font-bold font-prompt cursor-pointer bg-body-bg text-body-text'>
-                            Work
+                    <div className='w-full lg:w-1/4 flex flex-col items-center lg:items-start space-y-9 lg:space-y-8 xl:space-y-10 mb-10 lg:mb-0 '>
+                        <h1 className='hover:animation-shake text-3xl lg:text-4xl xl:text-7xl font-bold font-prompt cursor-pointer bg-body-bg text-body-text'>
+                            <Link href='/work'>Work</Link>
                         </h1>
-                        <h1 className='text-3xl lg:text-4xl xl:text-5xl font-bold font-prompt cursor-pointer bg-body-bg text-body-text'>
+
+                        <h1 className='text-3xl lg:text-4xl xl:text-7xl font-bold font-prompt cursor-pointer bg-body-bg text-body-text hover:animation-shake'>
                             About
                         </h1>
-                        <h1 className='text-3xl lg:text-4xl xl:text-5xl font-bold font-prompt cursor-pointer bg-body-bg text-body-text'>
+                        <h1 className='text-3xl lg:text-4xl xl:text-7xl font-bold font-prompt cursor-pointer bg-body-bg text-body-text hover:animation-shake'>
                             Shop
                         </h1>
-                        <h1 className='text-3xl lg:text-4xl xl:text-5xl font-bold font-prompt cursor-pointer bg-body-bg text-body-text'>
+                        <h1 className='text-3xl lg:text-4xl xl:text-7xl font-bold font-prompt cursor-pointer bg-body-bg text-body-text hover:animation-shake'>
                             Contact
                         </h1>
                     </div>
                 </div>
+                {/* Début de la section Galerie */}
+                <div className='py-12'>
+                    <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+                        <div className='text-center'>
+                            <h2 className='text-3xl lg:text-4xl xl:text-7xl font-bold font-prompt cursor-pointer bg-body-bg text-body-text'>
+                                Projets
+                            </h2>
+                        </div>
+
+                        <div className='mt-10'>
+                            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
+                                {/* Liste explicite de vos éléments d'image */}
+                                {[
+                                    { src: "/bjr.svg", alt: "Projet 1" },
+                                    { src: "/bjr.svg", alt: "Projet 2" },
+                                    { src: "/bjr.svg", alt: "Projet 3" },
+                                    { src: "/bjr.svg", alt: "Projet 4" },
+                                    {
+                                        src: "/bjr.svg",
+                                        alt: "Projet 5",
+                                    },
+                                    { src: "/bjr.svg", alt: "Projet 6" },
+                                ].map((project, i) => (
+                                    <div
+                                        key={i}
+                                        className='overflow-hidden shadow-lg rounded-lg cursor-pointer m-auto'>
+                                        <div className='w-full block h-full'>
+                                            <Image
+                                                alt={project.alt}
+                                                src={project.src}
+                                                width={500}
+                                                height={300}
+                                                objectFit='cover'
+                                                className='hover:scale-105 transition-transform duration-500 ease-in-out'
+                                            />
+                                            <div className='bg-[#1b1b1d] p-4'>
+                                                <p className='text-indigo-500 text-md font-medium'>
+                                                    {project.alt}
+                                                </p>
+                                                <p className='text-white text-xs mt-2'>
+                                                    Une brève description du
+                                                    projet, ses objectifs, les
+                                                    technologies utilisées, etc.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* Fin de la section Galerie */}
             </body>
         </>
     );
