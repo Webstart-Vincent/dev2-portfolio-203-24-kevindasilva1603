@@ -13,21 +13,21 @@ export default function Home() {
             <body className='bg-[#1b1b1d]  text-body-text'>
                 <div className='flex flex-col lg:flex-row justify-between items-center h-screen px-4 md:px-10 lg:px-20 xl:px-40 mx-auto'>
                     <div className='nav-left hidden lg:flex flex-col items-center justify-start fixed top-0 left-0 h-screen'>
-                        <a
+                        <Link
                             href='https://www.linkedin.com/in/k%C3%A9vin-da-silva-069755258/'
                             className='nav-left-item my-6 text-lg bg-body-bg font-grandstander text-body-text '>
                             LI
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             href='https://www.linkedin.com/in/k%C3%A9vin-da-silva-069755258/'
                             className='nav-left-item my-6 text-lg bg-body-bg font-grandstander text-body-text'>
                             TW
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             href='https://www.linkedin.com/in/k%C3%A9vin-da-silva-069755258/'
                             className='nav-left-item my-6 text-lg bg-body-bg font-grandstander body-bg text-body-text'>
                             DR
-                        </a>
+                        </Link>
                         <div className='w-px h-24 bg-gray-600 my-8'></div>
                         <div className='copyright text-xs text-body-text'>
                             © 2023
@@ -35,21 +35,21 @@ export default function Home() {
                     </div>
 
                     <div className='w-full lg:hidden flex justify-between items-center py-4'>
-                        <a
+                        <Link
                             href='https://www.linkedin.com/in/k%C3%A9vin-da-silva-069755258/'
                             className='text-lg bg-body-bg font-grandstander text-body-text'>
                             LI
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             href='https://www.linkedin.com/in/k%C3%A9vin-da-silva-069755258/'
                             className='text-lg bg-body-bg font-grandstander text-body-text'>
                             TW
-                        </a>
-                        <a
+                        </Link>
+                        <Link
                             href='https://www.linkedin.com/in/k%C3%A9vin-da-silva-069755258/'
                             className='text-lg bg-body-bg font-grandstander text-body-text'>
                             DR
-                        </a>
+                        </Link>
                     </div>
                     <div className='w-full lg:hidden bg-gray-600 h-px my-4'></div>
                     <div className='hidden lg:hidden text-xs mb-4 text-body-text'>
@@ -108,60 +108,69 @@ export default function Home() {
                                         alt: "Bonjour la terre",
                                         description:
                                             "Description du Projet 1, ses objectifs, les technologies utilisées.",
+                                        href: "/projet-1",
                                     },
                                     {
                                         src: "/allo.svg",
                                         alt: "Allo ciné",
                                         description:
                                             "Description du Projet 2, ses objectifs, les technologies utilisées.",
+                                        href: "/projet-2",
                                     },
                                     {
                                         src: "/tmdb.svg",
                                         alt: "TMDB",
                                         description:
                                             "Description du Projet 3, ses objectifs, les technologies utilisées.",
+                                        href: "/projet-3",
                                     },
                                     {
                                         src: "/kaplish.svg",
                                         alt: "Kaplish",
                                         description:
                                             "Description du Projet 4, ses objectifs, les technologies utilisées.",
+                                        href: "/projet-4",
                                     },
                                     {
                                         src: "/bjr.svg",
                                         alt: "Vercel",
                                         description:
                                             "Description du Projet 5, ses objectifs, les technologies utilisées.",
+                                        href: "/projet-5",
                                     },
                                     {
                                         src: "/next.svg",
                                         alt: "Next",
                                         description:
                                             "Description du Projet 6, ses objectifs, les technologies utilisées.",
+                                        href: "/projet-6",
                                     },
                                 ].map((project, i) => (
-                                    <div
-                                        key={i}
-                                        className='overflow-hidden shadow-lg rounded-lg cursor-pointer m-auto'>
-                                        <div className='w-full block h-full'>
-                                            <Image
-                                                alt={project.alt}
-                                                src={project.src}
-                                                width={500}
-                                                height={300}
-                                                objectFit='cover'
-                                                className='hover:scale-105 transition-transform duration-500 ease-in-out'
-                                            />
-                                            <div className='bg-[#1b1b1d] p-4'>
-                                                <p className='text-indigo-500 text-md font-medium'>
-                                                    {project.alt}
-                                                </p>
-                                                <p className='text-white text-xs mt-2'>
-                                                    {project.description}
-                                                </p>
+                                    <Link key={i} href={project.href} passHref>
+                                        <div className='overflow-hidden shadow-lg rounded-lg cursor-pointer m-auto'>
+                                            <div className='w-full block h-full'>
+                                                {/* Remplacez Image par votre composant Image correct, comme <img> ou un composant Image de Next.js, avec les props appropriées */}
+                                                <img
+                                                    alt={project.alt}
+                                                    src={project.src}
+                                                    width={500}
+                                                    height={300}
+                                                    style={{
+                                                        objectFit: "cover",
+                                                    }}
+                                                    className='hover:scale-105 transition-transform duration-500 ease-in-out'
+                                                />
+                                                <div className='bg-[#1b1b1d] p-4'>
+                                                    <p className='text-indigo-500 text-md font-medium'>
+                                                        {project.alt}
+                                                    </p>
+                                                    <p className='text-white text-xs mt-2'>
+                                                        {project.description}
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </Link>
                                 ))}
                             </div>
                         </div>
