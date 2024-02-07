@@ -97,24 +97,48 @@ export default function Home() {
                 <div className='py-12'>
                     <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
                         <div className='text-center'>
-                            <h2 className='text-3xl lg:text-4xl xl:text-7xl font-bold font-prompt cursor-pointer bg-body-bg text-body-text'>
-                                Projets
-                            </h2>
+                            <h2 className='text-3xl lg:text-4xl xl:text-7xl font-bold font-prompt cursor-pointer bg-body-bg text-body-text'></h2>
                         </div>
 
                         <div className='mt-10'>
                             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>
-                                {/* Liste explicite de vos éléments d'image */}
                                 {[
-                                    { src: "/bjr.svg", alt: "Projet 1" },
-                                    { src: "/bjr.svg", alt: "Projet 2" },
-                                    { src: "/bjr.svg", alt: "Projet 3" },
-                                    { src: "/bjr.svg", alt: "Projet 4" },
+                                    {
+                                        src: "/vercel.svg",
+                                        alt: "Bonjour la terre",
+                                        description:
+                                            "Description du Projet 1, ses objectifs, les technologies utilisées.",
+                                    },
+                                    {
+                                        src: "/allo.svg",
+                                        alt: "Allo ciné",
+                                        description:
+                                            "Description du Projet 2, ses objectifs, les technologies utilisées.",
+                                    },
+                                    {
+                                        src: "/tmdb.svg",
+                                        alt: "TMDB",
+                                        description:
+                                            "Description du Projet 3, ses objectifs, les technologies utilisées.",
+                                    },
+                                    {
+                                        src: "/kaplish.svg",
+                                        alt: "Kaplish",
+                                        description:
+                                            "Description du Projet 4, ses objectifs, les technologies utilisées.",
+                                    },
                                     {
                                         src: "/bjr.svg",
-                                        alt: "Projet 5",
+                                        alt: "Vercel",
+                                        description:
+                                            "Description du Projet 5, ses objectifs, les technologies utilisées.",
                                     },
-                                    { src: "/bjr.svg", alt: "Projet 6" },
+                                    {
+                                        src: "/next.svg",
+                                        alt: "Next",
+                                        description:
+                                            "Description du Projet 6, ses objectifs, les technologies utilisées.",
+                                    },
                                 ].map((project, i) => (
                                     <div
                                         key={i}
@@ -133,9 +157,7 @@ export default function Home() {
                                                     {project.alt}
                                                 </p>
                                                 <p className='text-white text-xs mt-2'>
-                                                    Une brève description du
-                                                    projet, ses objectifs, les
-                                                    technologies utilisées, etc.
+                                                    {project.description}
                                                 </p>
                                             </div>
                                         </div>
