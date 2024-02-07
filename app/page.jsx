@@ -149,7 +149,6 @@ export default function Home() {
                                     <Link key={i} href={project.href} passHref>
                                         <div className='overflow-hidden shadow-lg rounded-lg cursor-pointer m-auto'>
                                             <div className='w-full block h-full'>
-                                                {/* Remplacez Image par votre composant Image correct, comme <img> ou un composant Image de Next.js, avec les props appropriées */}
                                                 <img
                                                     alt={project.alt}
                                                     src={project.src}
