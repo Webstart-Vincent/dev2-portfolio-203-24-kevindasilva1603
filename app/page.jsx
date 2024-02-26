@@ -108,7 +108,7 @@ export default function Home() {
                                         alt: "Bonjour la terre",
                                         description:
                                             "Description du Projet 1, ses objectifs, les technologies utilisées.",
-                                        href: "/projet-1",
+                                        href: "/work",
                                     },
                                     {
                                         src: "/allo.svg",
