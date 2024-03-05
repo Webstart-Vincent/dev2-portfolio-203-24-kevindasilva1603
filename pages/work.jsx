@@ -81,7 +81,7 @@ export default function Work() {
                     </p>
                     <p className='mt-4'>
                         <a
-                            href='mailto:exemple@domaine.com'
+                            href='kevinsilv1603@gmail.com'
                             className='inline-block px-6 py-3 border border-gray-700 text-gray-300 hover:bg-gray-700 hover:text-white transition duration-300 ease-in-out font-bold rounded-md'>
                             Envoyer un email
                         </a>

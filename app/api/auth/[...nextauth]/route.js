@@ -5,9 +5,9 @@ import GoogleProvider from "next-auth/providers/google";
 const authOptions = {
     providers: [
         GoogleProvider({
-            clientId: process.env.GOOGLE_CLIENT_ID,
+            clientId: process.env.GOOGLE_ID,
 
-            clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+            clientSecret: process.env.GOOGLE_SECRET,
         }),
     ],
 
@@ -19,7 +19,10 @@ const authOptions = {
 
     callbacks: {
         async signIn({ user: { email } }) {
-            return email === process.env.EMAIL_ADMIN;
+            return (
+                email === process.env.EMAIL_ADMIN ||
+                email === process.env.EMAIL_PROF
+            );
         },
 
         async redirect({ url, baseUrl }) {
