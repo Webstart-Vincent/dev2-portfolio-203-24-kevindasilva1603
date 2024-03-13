@@ -13,6 +13,7 @@ const Dashboard = () => {
     const projects = [
         { id: 1, title: "Projet 1", slug: "projet-1" },
         { id: 2, title: "Projet 2", slug: "projet-2" },
+        { id: 3, title: "Projet 3", slug: "projet-3" },
     ];
 
     if (status == "authenticated") {
