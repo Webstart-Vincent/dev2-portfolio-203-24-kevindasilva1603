@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Link from "next/link";
 import { Image as CldImage } from "cloudinary-react";
+import Head from "next/head";
 
 const Gallery = () => {
     const [projects, setProjects] = useState([]);
@@ -17,6 +18,19 @@ const Gallery = () => {
 
     return (
         <div className='bg-[#1b1b1d] text-white min-h-screen p-12'>
+            <Head>
+                <title>Gallery</title>
+                <meta
+                    name='description'
+                    content='Explore our gallery of amazing projects.'
+                />
+                <meta property='og:title' content='Gallery' />
+                <meta
+                    property='og:description'
+                    content='Explore our gallery of amazing projects.'
+                />
+                <meta property='og:image' content='/default-og-image.jpg' />
+            </Head>
             <h1 className='text-4xl mb-8 text-center'>Gallery</h1>
             <div className=' grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10'>
                 {projects.length > 0 ? (

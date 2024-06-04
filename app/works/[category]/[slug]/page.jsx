@@ -1,9 +1,10 @@
 import axios from "axios";
+import Head from "next/head";
 
 // Fonction pour générer les chemins statiques
 export async function generateStaticParams() {
     try {
-        const response = await axios.get("http://localhost:3002/api/projects");
+        const response = await axios.get("http://localhost:3000/api/projects");
         const projects = response.data.data;
 
         if (!Array.isArray(projects)) {
@@ -51,6 +52,16 @@ const Page = async ({ params }) => {
 
         return (
             <div className='bg-[#1b1b1d] text-white min-h-screen p-12'>
+                <Head>
+                    <title>{data.titre}</title>
+                    <meta name='description' content={data.description} />
+                    <meta property='og:title' content={data.titre} />
+                    <meta
+                        property='og:description'
+                        content={data.description}
+                    />
+                    <meta property='og:image' content={imageUrl} />
+                </Head>
                 <div className='max-w-4xl mx-auto'>
                     <h1 className='text-4xl font-bold mb-4'>{data.titre}</h1>
                     <p className='mb-8'>{data.description}</p>
