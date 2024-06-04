@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Grandstander&family=Prompt:ital,wght@0,900;1,300;1,400&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --color-body-bg: radial-gradient(circle at center, #222, #000);
+    ---color-body-backgroudnd: radial-gradient(circle at center, #222, #000);
+}
+
+@keyframes shake {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+.hover\:animation-shake:hover {
+    animation: shake 0.5s ease-in-out infinite;
+}
