@@ -15,8 +15,10 @@ export async function generateStaticParams() {
         }
 
         const paths = projects.map((project) => ({
-            category: project.category,
-            slug: project.slug,
+            params: {
+                category: project.category,
+                slug: project.slug,
+            },
         }));
 
         return paths;
