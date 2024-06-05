@@ -13,10 +13,8 @@ export async function generateStaticParams() {
         }
 
         const paths = projects.map((project) => ({
-            params: {
-                category: project.category,
-                slug: project.slug,
-            },
+            category: project.category,
+            slug: project.slug,
         }));
 
         return paths;
@@ -34,9 +32,7 @@ const getCloudinaryUrl = (publicId) => {
 
 // Composant de la page
 const Page = async ({ params }) => {
-    const { slug } = params;
-    console.log("Category in Page component:", params.category);
-    console.log("Slug in Page component:", slug);
+    const { category, slug } = params;
 
     try {
         const response = await axios.get(
