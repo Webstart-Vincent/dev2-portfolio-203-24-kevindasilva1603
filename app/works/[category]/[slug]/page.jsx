@@ -1,12 +1,12 @@
 import axios from "axios";
 import Head from "next/head";
+import Image from "next/image";
 
 // Fonction pour générer les chemins statiques
 export async function generateStaticParams() {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
     try {
-        const response = await axios.get(
-            `${process.env.NEXT_PUBLIC_API_URL}/api/projects`
-        );
+        const response = await axios.get(`${apiUrl}/api/projects`);
         const projects = response.data.data;
 
         if (!Array.isArray(projects)) {
@@ -37,11 +37,10 @@ const getCloudinaryUrl = (publicId) => {
 // Composant de la page
 const Page = async ({ params }) => {
     const { category, slug } = params;
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
 
     try {
-        const response = await axios.get(
-            `${process.env.NEXT_PUBLIC_API_URL}/api/projects/${slug}`
-        );
+        const response = await axios.get(`${apiUrl}/api/projects/${slug}`);
         const data = response.data.data;
 
         if (!data) {
@@ -66,10 +65,12 @@ const Page = async ({ params }) => {
                     <h1 className='text-4xl font-bold mb-4'>{data.titre}</h1>
                     <p className='mb-8'>{data.description}</p>
                     <div className='relative w-full h-96 mb-8'>
-                        <img
+                        <Image
                             src={imageUrl}
                             alt={data.titre}
-                            className='w-full h-full object-cover rounded-lg'
+                            layout='fill'
+                            objectFit='cover'
+                            className='rounded-lg'
                         />
                     </div>
                     <p className='text-gray-400'>Category: {data.category}</p>
