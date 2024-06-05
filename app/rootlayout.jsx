@@ -19,9 +19,9 @@ export default function Home() {
 
     return (
         <>
-            <Head>
+            <head>
                 <title>Portfolio</title>
-            </Head>
+            </head>
             <body className='bg-[#1b1b1d] text-body-text'>
                 <div className='flex flex-col lg:flex-row justify-between items-center h-screen px-4 md:px-10 lg:px-20 xl:px-40 mx-auto'>
                     <div className='nav-left hidden lg:flex flex-col items-center justify-start fixed top-0 left-0 h-screen'>
