@@ -4,9 +4,7 @@ import Head from "next/head";
 // Fonction pour générer les chemins statiques
 export async function generateStaticParams() {
     try {
-        const response = await axios.get(
-            `${process.env.NEXT_PUBLIC_API_URL}/projects`
-        );
+        const response = await axios.get(`${process.env.API_URL}/api/projects`);
         const projects = response.data.data;
 
         if (!Array.isArray(projects)) {
@@ -36,13 +34,13 @@ const getCloudinaryUrl = (publicId) => {
 
 // Composant de la page
 const Page = async ({ params }) => {
-    const { category, slug } = params;
-    console.log("Category in Page component:", category);
+    const { slug } = params;
+    console.log("Category in Page component:", params.category);
     console.log("Slug in Page component:", slug);
 
     try {
         const response = await axios.get(
-            `${process.env.NEXT_PUBLIC_API_URL}/projects/${slug}`
+            `${process.env.API_URL}/api/projects/${slug}`
         );
         const data = response.data.data;
 
